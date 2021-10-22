@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator using prompt</title>
+</head>
+
+<body style="background-color: #8bc7ff">
+    <center>
+        <br>
+        <h1> Addition, Subtraction, Multiplication of Two Number using prompt</h1>
+        <form>
+            <input type="button" value="Enter Number through prompt" onclick="calculate();" />
+            <br><br>
+            <input id="num1" type="text" value="First number" disabled />
+            <br><br>
+            <input id="num2" type="text" value="Second number" disabled />
+            <br><br>
+            <input type="button" value="Addition" onclick="add();" />
+            <input type="button" value="Subtract" onclick="subtract();" />
+            <input type="button" value="Multiply" onclick="multiply();" />
+        </form>
+    </center>
+</body>
+
+<script type="text/javascript">
+    function calculate() {
+        var first_number = prompt("Enter the first number", "");
+        document.getElementById("num1").value = first_number;
+        var second_number = prompt("Enter the second number", "");
+        document.getElementById("num2").value = second_number;
+    }
+    function add() {
+        var first = document.getElementById("num1").value;
+        var second = document.getElementById("num2").value;
+        var result = parseInt(first) + parseInt(second);
+        alert("Addition is : " + result);
+    }
+    function subtract() {
+        var first = document.getElementById("num1").value;
+        var second = document.getElementById("num2").value;
+        if (second > first) {
+            var result = parseInt(first) - parseInt(second);
+            alert("Subtraction is : " + result);
+        }
+        else {
+            var result = parseInt(second) - parseInt(first);
+            alert("Subtraction is : " + result);
+        }
+    }
+    function multiply() {
+        var first = document.getElementById("num1").value;
+        var second = document.getElementById("num2").value;
+        var result = parseInt(first) * parseInt(second);
+        alert("Multiplication is : " + result);
+    }
+</script>
+
+</html>
